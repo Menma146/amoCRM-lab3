@@ -1,0 +1,99 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Заявки в одном окне · amoCRM</title><style>
+:root{font-family:system-ui,sans-serif;color:#12223d;background:#fcfdff;line-height:1.55;--blue:#245bea;--muted:#50617d;--edge:#d9e3f5}*{box-sizing:border-box}body{margin:0}a{color:inherit}header{border-bottom:1px solid var(--edge)}.wrap{max-width:1120px;margin:auto;padding-inline:clamp(20px,5vw,48px)}.nav{display:flex;align-items:center;gap:22px;padding-block:18px;flex-wrap:wrap}.nav strong{margin-right:auto;font-size:22px}.hero{background:#eef3ff;padding-block:clamp(48px,8vw,105px)}.grid{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(24px,6vw,76px);align-items:center}h1,h2,h3,p{margin:0 0 14px}h1{font-size:clamp(32px,5.4vw,66px);line-height:1.03;letter-spacing:-.045em}h2{font-size:clamp(24px,3.4vw,38px);line-height:1.16}.eyebrow{color:#204cae;font-weight:650}p,small{color:var(--muted)}small{display:block}.button,button{display:inline-block;border:0;border-radius:10px;background:var(--blue);padding:12px 18px;color:white;font:inherit;font-weight:650;text-decoration:none;cursor:pointer}.panel,article,form{background:white;border:1px solid var(--edge);border-radius:18px;padding:22px}.panel h2{font-size:22px}.ticket{display:flex;align-items:center;gap:10px;border-top:1px solid var(--edge);padding:15px 0}.dot{height:10px;width:10px;border-radius:50%;background:var(--blue);flex:none}.status{margin-left:auto;font-size:14px;color:#244caa}.section,.demo{padding-block:52px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.demo{background:#10244b;color:white}.demo p{color:#d9e3f5}form{color:#12223d;display:grid;gap:12px}label{font-weight:650}select{font:inherit;width:100%;padding:10px;border:1px solid var(--edge);border-radius:8px;background:white}form #result{color:#145f42;margin:0}.consent{position:fixed;inset:auto 16px 18px auto;max-width:390px;background:white;border:1px solid var(--edge);border-radius:14px;padding:18px;box-shadow:0 8px 25px #11213a22}.consent #deny{background:#334662}a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #ffad47;outline-offset:3px}@media(max-width:700px){.grid,.cards{grid-template-columns:1fr}.nav{gap:12px}}
+
+button:disabled{opacity:.6;cursor:default} form p.hint{color:#50617d;margin:0;font-size:.925rem}
+</style></head>
+<body><header><div class="wrap nav"><strong>amoCRM</strong><a href="#how">Как это работает</a><a href="#demo">Демо</a></div></header>
+<main><section class="hero"><div class="wrap grid"><div><p class="eyebrow">Для руководителей отделов продаж</p><h1>Перестаньте терять клиентов в мессенджерах</h1><p>Соберите обращения с сайта, из чатов и почты в одной воронке. Назначайте ответственных и следите за каждой заявкой до сделки.</p><a class="button" id="cta" href="#demo">Попробовать демо</a></div>
+<div class="panel"><h2>Входящие заявки</h2><div class="ticket"><span class="dot"></span><div><strong>Заявка с сайта</strong><small>Новый запрос на консультацию</small></div><span class="status">Новая</span></div><div class="ticket"><span class="dot"></span><div><strong>Чат с клиентом</strong><small>Отправить предложение</small></div><span class="status">В работе</span></div><div class="ticket"><span class="dot"></span><div><strong>Обращение по почте</strong><small>Согласовать время звонка</small></div><span class="status">Задача</span></div></div></div></section>
+<section class="wrap section" id="how"><h2>От первого обращения до сделки</h2><div class="cards"><article><h3>Соберите заявки</h3><p>Подключите нужные каналы и распределяйте обращения между менеджерами.</p></article><article><h3>Настройте воронку</h3><p>Следите за этапами сделок и ставьте задачи по следующим шагам.</p></article><article><h3>Оцените рекламу</h3><p>Сопоставляйте источники обращений с результатами продаж.</p></article></div></section>
+<section class="demo" id="demo"><div class="wrap grid"><div><h2>Как вы хотите использовать CRM?</h2><p>Укажите свою роль и выберите, что хотели бы настроить в CRM. Контактные данные не требуются.</p></div><form id="request"><label for="role">Ваша роль</label>
+<select required id="role" name="role">
+<option value="">Выберите роль</option>
+<option value="owner">Владелец бизнеса</option>
+<option value="sales_lead">Руководитель отдела продаж</option>
+<option value="sales_specialist">Менеджер по продажам или маркетолог</option>
+<option value="other">Другая роль</option>
+</select>
+<label for="task">Что хотите настроить?</label><select required id="task" name="task"><option value="">Выберите сценарий</option><option value="inbox">Заявки в одном окне</option><option value="reporting">Аналитика рекламы</option><option value="migration">Перенос клиентской базы</option></select><button type="submit">Отправить учебную заявку</button><p role="status" id="result" hidden>Готово. Вы завершили учебный сценарий.</p><p class="hint">Форма имитирует заявку на демо amoCRM.</p></form></div></section></main>
+<footer class="wrap nav"><span>Учебный проект по маркетингу · НИЯУ МИФИ</span><a href="#analytics" id="settings">Настройки аналитики</a></footer>
+<div id="analytics" class="consent" hidden><p>Разрешаете отправлять обезличенные события в подключённые системы аналитики?</p><div><button id="allow" type="button">Разрешить</button> <button id="deny" type="button">Отклонить</button></div></div><script>
+// Для подключения вставьте идентификаторы из кабинетов аналитики.
+const googleId = "";  // G-…
+const yandexId = "";  // Номер счётчика
+const configActive=Boolean(googleId||yandexId);
+const consent=document.querySelector('#analytics');
+const loadScript=(url)=>{const script=document.createElement('script');script.async=true;script.src=url;document.head.append(script)};
+function initAnalytics(){
+  if(window.labTrackingStarted)return;
+  window.labTrackingStarted=true;
+  if(googleId){
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=function(){window.dataLayer.push(arguments)};
+    window.gtag('js',new Date());
+    window.gtag('config',googleId,{allow_google_signals:false});
+    loadScript('https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(googleId));
+  }
+  if(yandexId){
+    window.ym=function(){(window.ym.a=window.ym.a||[]).push(arguments)};
+    window.ym.l=Date.now();
+    loadScript('https://mc.yandex.ru/metrika/tag.js');
+    window.ym(Number(yandexId),'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:false});
+  }
+}
+function track(event, parameters = {}){
+  if(!window.labTrackingStarted)return;
+  window.gtag?.('event',event,parameters);
+  if(yandexId)window.ym?.(Number(yandexId),'reachGoal',event,parameters);
+}
+const settings=document.querySelector('#settings');
+settings.hidden=!configActive;
+if(configActive){
+  const previous=localStorage.getItem('labAnalyticsConsent');
+  if(previous==='allow')initAnalytics();
+  if(!previous)consent.hidden=false;
+  settings.addEventListener('click',(event)=>{event.preventDefault();consent.hidden=false});
+  for(const choice of ['allow','deny']){
+    document.querySelector('#'+choice).addEventListener('click',()=>{
+      localStorage.setItem('labAnalyticsConsent',choice);
+      if(choice==='deny'&&window.labTrackingStarted){location.reload();return}
+      if(choice==='allow')initAnalytics();
+      consent.hidden=true;
+    });
+  }
+}
+
+const form = document.querySelector('#request');
+form.reset();
+document.querySelector('#cta').addEventListener('click', () => track('demo_cta_click'));
+form.addEventListener('change', () => track('demo_form_start'), {once:true});
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (!form.reportValidity() || form.dataset.submitted) return;
+
+  const fields = new FormData(form);
+  const parameters = {
+    visitor_role: fields.get('role'),
+    demo_scenario: fields.get('task')
+  };
+  form.dataset.submitted = 'true';
+  for (const field of form.querySelectorAll('select, button')) field.disabled = true;
+  document.querySelector('#result').hidden = false;
+  track('generate_lead', parameters);
+});
+
+const scrollMarker = document.createElement('span');
+scrollMarker.setAttribute('aria-hidden', 'true');
+Object.assign(scrollMarker.style, {position:'absolute', top:'75%', left:'0', width:'1px', height:'1px'});
+document.body.style.position = 'relative';
+document.body.append(scrollMarker);
+const scrollObserver = new IntersectionObserver(([entry]) => {
+  if (entry.isIntersecting && window.labTrackingStarted) {
+    track('scroll_75');
+    scrollObserver.disconnect();
+  }
+});
+scrollObserver.observe(scrollMarker);
+
+</script>
+</body></html>
