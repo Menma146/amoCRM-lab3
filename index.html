@@ -20,7 +20,7 @@ button:disabled{opacity:.6;cursor:default} form p.hint{color:#50617d;margin:0;fo
 <div id="analytics" class="consent" hidden><p>Разрешаете отправлять обезличенные события в подключённые системы аналитики?</p><div><button id="allow" type="button">Разрешить</button> <button id="deny" type="button">Отклонить</button></div></div><script>
 // Для подключения вставьте идентификаторы из кабинетов аналитики.
 const googleId = "";  // G-…
-const yandexId = "";  // Номер счётчика
+const yandexId = "114629946";  // Номер счётчика
 const configActive=Boolean(googleId||yandexId);
 const consent=document.querySelector('#analytics');
 const loadScript=(url)=>{const script=document.createElement('script');script.async=true;script.src=url;document.head.append(script)};
